@@ -6,7 +6,23 @@ import CountriesList from './components/CountriesList';
 
 
 class App extends Component {
+  state = {
+    searchTerms: {}
+  }
   componentDidMount(){
+  }
+  onChange = (e, type) =>{
+    // console.log(e.target.value, type)
+    const { value } = e.target;
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        searchTerms: {
+          ...prevState.searchTerms,
+          type: value,
+        }
+      }
+    })
   }
   render() {
     return (
@@ -15,8 +31,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title"> Search Countries </h1>
         </header>
-        <Search />
-        <CountriesList />
+        <Search onChange={this.onChange} />
+        <CountriesList searchTerms={this.state.searchTerms} />
       </div>
     );
   }

@@ -21,7 +21,6 @@ class CountriesList extends Component {
               <th>Capital</th>
               <th>Region</th>
               <th>Sub-Region</th>
-              <th>indepentant</th>
             </tr>
           </thead>
           <tbody>
@@ -31,8 +30,6 @@ class CountriesList extends Component {
               <td>{country.capital}</td>
               <td>{country.region}</td>
               <td>{country.subregion}</td>
-              <td>{country.subregion}</td>
-              <td>{country.independent}</td>
             </tr>
 
           )}
