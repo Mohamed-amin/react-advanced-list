@@ -16,7 +16,7 @@ class App extends Component {
         ...prevState,
         searchTerms: {
           ...prevState.searchTerms,
-          type: value,
+          [type]: value,
         }
       }
     })

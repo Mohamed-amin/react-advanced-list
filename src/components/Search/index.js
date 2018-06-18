@@ -8,7 +8,7 @@ class Search extends Component {
     return (
       <div className="card">
         <form className="form">
-          <FormElement type="name" onChange={onChange}/>
+          <FormElement type="name.common" onChange={onChange}/>
           <FormElement type="capital" onChange={onChange}/>
           <FormElement type="region" onChange={onChange}/>
           <FormElement type="subregion" onChange={onChange}/>
