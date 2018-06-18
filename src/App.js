@@ -9,10 +9,7 @@ class App extends Component {
   state = {
     searchTerms: {}
   }
-  componentDidMount(){
-  }
   onChange = (e, type) =>{
-    // console.log(e.target.value, type)
     const { value } = e.target;
     this.setState((prevState) => {
       return {
