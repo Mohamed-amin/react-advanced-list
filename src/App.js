@@ -9,6 +9,24 @@ class App extends Component {
   state = {
     searchTerms: {}
   }
+  /**
+   * To simplify, this is what we want to do
+   * before : state = {
+   *     searchTerms : {
+   *          country: 'Aruba'
+   *     }
+   *  }
+   *
+   * after: state = {
+   *     searchTerms: {
+   *        country: 'Aruba',
+   *        capital: 'Oranjestad'
+   *      }
+   *  }
+   *
+   * So basically extending the current searchTerms with a new key
+   * with maintaining the current state.
+   */
   onChange = (e, type) =>{
     const { value } = e.target;
     this.setState((prevState) => {

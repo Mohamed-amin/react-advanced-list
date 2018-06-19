@@ -11,19 +11,24 @@ class CountriesList extends Component {
         this.setState({ countries })
       });
   }
+  /**
+   * decides whether to show the country row in the list or not.
+   * if the searched field contains any charachter from the input
+   * it will show, otherwise it return show as false
+   */
   show = country => {
     const { searchTerms } = this.props;
     let show = true;
-
-    Object.entries(searchTerms).forEach((entry) => {
-      const value = get(country, entry[0], '').toString().toLowerCase()
-
-      if(!value.includes(entry[1])){
+    /** loop through and exit on the first false match **/
+    return Object.entries(searchTerms).every((entry) => {
+      const [ searchKey, searchTerm ] = entry;
+      const value = get(country, searchKey, '').toString().toLowerCase();
+      if(!value.includes(searchTerm)){
         show = false;
       }
-    })
 
-    return show;
+      return show;
+    })
   }
   render() {
     const { countries } = this.state;
